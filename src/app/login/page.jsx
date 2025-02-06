@@ -1,14 +1,12 @@
 'use client'
 
 import { myAuth } from "@/backend/auth"
-import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
 
 function page() {
     const [password, setPassword] = useState("");
     const [auth, setAuth] = useState(false);
-    const router = useRouter();
 
     useEffect(() => {
       router.push('/');
