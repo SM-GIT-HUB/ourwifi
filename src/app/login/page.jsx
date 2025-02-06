@@ -7,11 +7,12 @@ import toast from "react-hot-toast"
 
 function page() {
     const [password, setPassword] = useState("");
+    const [auth, setAuth] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
       router.push('/');
-    }, [])
+    }, [auth])
 
     async function handleAuth()
     {
@@ -25,9 +26,10 @@ function page() {
         return toast.error("DON'T YOU DARE", { id: "some" });
       }
       else
+      {
+        setAuth(true);
         toast.success("YOU'RE IN");
-
-      router.push('/');
+      }
     }
 
   return (
