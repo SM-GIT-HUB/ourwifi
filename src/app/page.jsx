@@ -1,8 +1,12 @@
+import { getDatas } from "@/backend/data"
+import Search from "@/components/Search"
 
-export default function Home() {
+export default async function Home() {
+  const res = await getDatas();
+
   return (
-    <div className="font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-[30px]">Hello world!</h1>
+    <div className="h-screen w-screen font-[family-name:var(--font-geist-sans)]">
+      <Search names={res.names} ips={res.ips} macs={res.macs} />
     </div>
   );
 }
