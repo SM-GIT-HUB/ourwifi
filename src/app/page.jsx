@@ -1,6 +1,8 @@
 import { getDatas } from "@/backend/data"
 import Search from "@/components/Search"
 
+export const revalidate = 300;
+
 export default async function Home() {
   const res = await getDatas();
 
